@@ -38,8 +38,8 @@ define cups::config (
   }
 
   augeas {"Manage ${name} in ${file}":
-    context => "/files${file}",
-    load_path => "/usr/share/augeas/lenses/contrib/",
+    incl => $file,
+    lens => 'Cups.lns',
     changes => $changes,
     notify => Service['cups'],
   }
