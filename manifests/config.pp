@@ -26,7 +26,7 @@ define cups::config (
           "set ${real_section}directive[.='${real_key}']/arg '${value}'",
         ]
       } else {
-        fail ("You must provide a value")
+        fail ('You must provide a value')
       }
     }
 
@@ -38,9 +38,9 @@ define cups::config (
   }
 
   augeas {"Manage ${name} in ${file}":
-    incl => $file,
-    lens => 'Cups.lns',
+    incl    => $file,
+    lens    => 'Cups.lns',
     changes => $changes,
-    notify => Service['cups'],
+    notify  => Service['cups'],
   }
 }
