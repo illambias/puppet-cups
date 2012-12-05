@@ -1,14 +1,14 @@
 class cups {
 
-  package {"cups":
+  package {'cups':
     ensure => present,
   }
 
-  service {"cups":
+  service {'cups':
     ensure  => running,
-    pattern => "cupsd",
+    pattern => 'cupsd',
     enable  => true,
-    require => Package["cups"],
+    require => Package['cups'],
   }
 
   augeas::lens { 'cups':
