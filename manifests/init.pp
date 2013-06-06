@@ -14,5 +14,6 @@ class cups {
   augeas::lens { 'cups':
     lens_source => 'puppet:///modules/cups/lenses/cups.aug',
     test_source => 'puppet:///modules/cups/lenses/test_cups.aug',
+    stock_since => '1.0',
   }
 }
