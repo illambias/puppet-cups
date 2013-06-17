@@ -1,6 +1,7 @@
 define cups::config (
   $ensure='present',
   $file='/etc/cups/cupsd.conf',
+  $service='cups',
   $section='',
   $key='',
   $value=''
@@ -41,6 +42,6 @@ define cups::config (
     incl    => $file,
     lens    => 'Cups.lns',
     changes => $changes,
-    notify  => Service['cups'],
+    notify  => Service[$service],
   }
 }
